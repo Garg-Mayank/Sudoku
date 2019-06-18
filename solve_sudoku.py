@@ -1,16 +1,6 @@
-# Sudoku Solver.
-
-board = [
-    [7, 8, 0, 4, 0, 0, 1, 2, 0],
-    [6, 0, 0, 0, 7, 5, 0, 0, 9],
-    [0, 0, 0, 6, 0, 1, 0, 7, 8],
-    [0, 0, 7, 0, 4, 0, 2, 6, 0],
-    [0, 0, 1, 0, 5, 0, 9, 3, 0],
-    [9, 0, 4, 0, 6, 0, 0, 0, 5],
-    [0, 7, 0, 3, 0, 0, 0, 1, 2],
-    [1, 2, 0, 0, 0, 7, 4, 0, 0],
-    [0, 4, 9, 2, 0, 6, 0, 0, 7]
-]
+"""
+The python file wiht all the functions to solve the sudoku board.
+"""
 
 
 def solve(board):
@@ -67,26 +57,6 @@ def check_validity(board, number, pos):
     return True
 
 
-def print_board(board):
-    """
-    Print the sudoku board in a specific pattern.\n
-    Arguments:\n
-        board: The board to be printed.
-    """
-    for i in range(0, len(board)):
-        if i % 3 == 0 and i != 0:
-            print('--------------------------')
-
-        for j in range(0, len(board[0])):
-            if j % 3 == 0 and j != 0:
-                print(' | ', end=" ")
-
-            if j == 8:
-                print(board[i][j])
-            else:
-                print(str(board[i][j]) + " ", end="")
-
-
 def find_empty(board):
     """
     Finding the empty space in Sudoku.\n
@@ -100,11 +70,3 @@ def find_empty(board):
                 return (i, j)
 
     return None
-
-
-if __name__ == "__main__":
-    print_board(board)
-    solve(board)
-    print('___________________________________________')
-    print()
-    print_board(board)

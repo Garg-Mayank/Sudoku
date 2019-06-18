@@ -1,27 +1,26 @@
 # Generate board.
 
-from solve_sudoku import solve, print_board
+import solve_sudoku
 from random import randint
 
-board = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0]
-]
 
-
-def fill_board(board):
+def generate_board():
     """
     Fill a blank board.\n
     Arguments:\n
         board: A blank board.
     """
+    board = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ]
     # X Axis.
     for i in range(0, len(board)):
         temp = list()
@@ -35,9 +34,6 @@ def fill_board(board):
                         board[i][j] = number
 
             else:
-                solve(board)
-    print_board(board)
+                solve_sudoku.solve(board)
 
-
-if __name__ == "__main__":
-    fill_board(board)
+    return board
